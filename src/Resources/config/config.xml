@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>WordPress Integration Configuration</title>
+        <title lang="de-DE">WordPress-Integration Konfiguration</title>
+
+        <input-field type="text">
+            <name>wordpressHomeUrl</name>
+            <label>WordPress Home URL</label>
+            <label lang="de-DE">WordPress-Home-URL</label>
+            <placeholder>https://www.2hatslogic.com</placeholder>
+            <helpText>
+                Enter the base URL of your WordPress website.
+            </helpText>
+            <helpText lang="de-DE">
+                Geben Sie die Basis-URL Ihrer WordPress-Website ein.
+            </helpText>
+            <required>true</required>
+        </input-field>
+
+        <input-field type="text">
+            <name>wordpressApiPath</name>
+            <label>WordPress REST API Path</label>
+            <label lang="de-DE">WordPress-REST-API-Pfad</label>
+            <defaultValue>wp-json/wp/v2</defaultValue>
+            <helpText>
+                This is the path to the WordPress REST API. Usually, there's no need to edit this value unless you have customized the API path.
+            </helpText>
+            <helpText lang="de-DE">
+                Dies ist der Pfad zur WordPress REST-API. In der Regel müssen Sie diesen Wert nicht bearbeiten, es sei denn, Sie haben den API-Pfad angepasst.
+            </helpText>
+            <required>true</required>
+        </input-field>
+
+        <component name="wp-api-test-button">
+            <name>wpApiTest</name>
+        </component>
+    </card>
+</config>

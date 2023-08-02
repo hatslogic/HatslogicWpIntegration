@@ -1,0 +1,8 @@
+{% block block_hatslogic_wp_page_listing %}
+    {% set element = block.slots.getSlot('content') %}
+    <div id="hatslogic-page-list" class="hatslogic-list w-100">
+        {% block block_hats_page_inner %}
+            {% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+        {% endblock %}
+    </div>
+{% endblock %}

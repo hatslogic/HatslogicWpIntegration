@@ -1,0 +1,70 @@
+{% set posts = elementData.posts.posts %}
+{% set totalPosts = elementData.posts.totalPosts %}
+{% set currentPage = elementData.posts.currentPage %}
+{% set perPage = elementData.posts.perPage %}
+{% set desktopColumn = 12 / elementData.posts.desktopColumn %}
+{% set tabletColumn = 12 / elementData.posts.tabletColumn %}
+{% set mobileColumn = 12 / elementData.posts.mobileColumn %}
+
+{% block element_hatslogic_wp_post_list %}
+    <div class="cms-element-wp-post-listing-wrapper">
+        <div class="cms-element-wp-post-listing">
+            <div class="hatslogic-wp-post-list-inner">
+                {% block element_hatslogic_wp_post_listing %}
+                    {% if posts is not empty %}
+                        <div class="row cms-listing-row">
+                            {% for post in posts %}
+                                <div class="col-{{ mobileColumn }} col-md-{{ tabletColumn }} col-lg-{{ desktopColumn }} form-group">
+                                    <div class="wp-box">
+                                        <div class="wp-image-box text-center">
+                                            <a href="{{ seoUrl('frontend.hatslogic.blog', {'blog_slug': post.slug}) }}">
+                                                <div class="wp-post-image-loader">
+                                                    <div class="spinner-border">
+                                                        <span class="sr-only"></span>
+                                                    </div>
+                                                </div>
+                                                <img src="{{ post.image }}" class="wp-post-image" style="display: none;"
+                                                    onload="this.style.display = 'block'; this.previousElementSibling.style.display = 'none';"
+                                                    onerror="this.style.display = 'none'; this.previousElementSibling.style.display = 'none';">
+                                            </a>
+                                        </div>
+                                        <div class="px-3 py-2">
+                                            <a href="{{ seoUrl('frontend.hatslogic.blog', {'blog_slug': post.slug}) }}" class="wp-post-title">
+                                                <p class="pt-2">{{ post.title|raw }}</p>
+                                            </a>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="py-2 wp-post-author">
+                                                        <span class="pl-2">{{ "hatslogicWPIntegration.general.by"|trans|sw_sanitize }} <b>{{ post.authorName ?? 'Unknown' }}</b> {{ "hatslogicWPIntegration.general.on"|trans|sw_sanitize }} {{ post.date|date('M d, Y') }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <div class="col-md-12">
+                                <div class="pagination-section py-3 text-center">
+                                    {% if currentPage > 1 %}
+                                        <a href="?page={{ currentPage - 1 }}" class="wp-pagination-link me-2">&laquo; </a>
+                                    {% endif %}
+
+                                    {% if currentPage < (totalPosts / perPage + 1) %}
+                                        <a href="?page={{ currentPage + 1 }}" class="wp-pagination-link ms-2"> &raquo;</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                        </div>
+                    {% else %}
+                        <div class="no-items-found-wrap text-center">
+                            <img src="{{ asset('/bundles/hatslogicwpintegration/static/cms/no_result_found.png') }}" class="img-fluid">
+                            <h1 class="py-4">{{ "hatslogicWPIntegration.general.no_result_found"|trans|sw_sanitize }}</h1>
+                        </div>
+                    {% endif %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{
+    "hatslogicWPIntegration": {
+        "general":{
+            "by" : "By",
+            "on" : "On",
+            "written_by" : "Written by",
+            "no_result_found" : "Oops! No results found.",
+            "404_found" : "Oops! It seems like you’ve encountered a 404 error. This means the link you clicked on is broken or the URL you entered is incorrect."
+        }
+    }
+}

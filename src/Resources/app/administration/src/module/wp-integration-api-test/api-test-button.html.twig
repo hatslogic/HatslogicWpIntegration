@@ -1,0 +1,9 @@
+<div style="display: block; margin-bottom: 20px;font-size:14px;text-align:right">
+    <sw-button-process
+        :isLoading="isLoading"
+        :processSuccess="isSaveSuccessful"
+        @process-finish="saveFinish"
+        @click="checkApi">
+        {{ $t('wp-integration.general.test_wordpress_api') }}
+    </sw-button-process>
+</div>

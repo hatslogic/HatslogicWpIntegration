@@ -1,0 +1,9 @@
+{% block cms_element_hats_wp_post %}
+    {% block element_wp_post_listing_wrapper %}
+        <div class="hatslogic-wp-posts">
+            {% sw_include '@Storefront/storefront/page/wp-post/listing.html.twig' with {
+                elementData: element.data
+            } %}
+        </div>
+    {% endblock %}
+{% endblock %}
