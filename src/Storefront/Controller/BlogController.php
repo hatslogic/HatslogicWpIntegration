@@ -12,9 +12,10 @@ use Shopware\Core\System\SystemConfig\SystemConfigService;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use HatslogicWpIntegration\Service\CurlService;
 use HatslogicWpIntegration\Service\ContentFormatter;
+use Shopware\Core\Framework\Routing\Annotation\RouteScope;
 
 /**
- * @Route(defaults={"_routeScope"={"storefront"}})
+ * @RouteScope(scopes={"storefront"})
  */
 class BlogController extends StorefrontController
 {
@@ -64,13 +65,8 @@ class BlogController extends StorefrontController
             if (is_array($response) && count($response) > 0) {
                 $metaTitle = $response[0]['yoast_head_json']['title'] ?? $response[0]['title']['rendered'];
                 $metaDescription = $response[0]['yoast_head_json']['description'] ?? $response[0]['title']['rendered'];
-                $canonicalLink = $this->router->generate('frontend.hatslogic.blog', [
-                    'blog_slug' => $slug,
-                ], UrlGeneratorInterface::ABSOLUTE_URL);
-
                 $page->getMetaInformation()->setMetaTitle($metaTitle);
                 $page->getMetaInformation()->setMetaDescription($metaDescription);
-                $page->getMetaInformation()->setCanonical($canonicalLink);
             }
         }
         
