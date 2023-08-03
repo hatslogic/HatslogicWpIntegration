@@ -1,5 +1,7 @@
 {% sw_extends '@Storefront/storefront/base.html.twig' %}
-
+{% block base_head %}
+    {% sw_include '@Storefront/storefront/page/wp-post/custom-meta.html.twig' %}
+{% endblock %}
 {% block base_content %}
     <div class="wp-post-page">
         {% if blog %}
