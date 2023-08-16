@@ -11,7 +11,12 @@ class ContentFormatter
         }
 
         $featuredMedia = $response[0]['_embedded']['wp:featuredmedia'][0]['source_url'] ?? null;
-        $featuredMediaAlt = $response[0]['_embedded']['wp:featuredmedia'][0]['alt_text'] ?? $response[0]['title']['rendered'];
+        if (isset($response[0]['_embedded']['wp:featuredmedia'][0]['alt_text']) &&
+            $response[0]['_embedded']['wp:featuredmedia'][0]['alt_text'] !== '') {
+            $featuredMediaAlt = $response[0]['_embedded']['wp:featuredmedia'][0]['alt_text'];
+        } else {
+            $featuredMediaAlt = $response[0]['title']['rendered'];
+        }
         $authorName = $response[0]['_embedded']['author'][0]['name'] ?? null;
         $content = $response[0]['content']['rendered'] ?? '';
         $content = str_replace('\n', '<br>', $content);
