@@ -11,16 +11,26 @@ class ContentFormatter
         }
 
         $featuredMedia = $response[0]['_embedded']['wp:featuredmedia'][0]['source_url'] ?? null;
+        $featuredMediaAlt = $response[0]['_embedded']['wp:featuredmedia'][0]['alt_text'] ?? $response[0]['title']['rendered'];
+        $authorName = $response[0]['_embedded']['author'][0]['name'] ?? null;
         $content = $response[0]['content']['rendered'] ?? '';
         $content = str_replace('\n', '<br>', $content);
         $content = str_replace('\t', '<<TAB>>', $content);
         $finalcontent = str_replace("\t", '<span></span>', $content);
         $content = str_replace('<<TAB>>', "\t", $finalcontent);
 
+        if (isset($postsData['_embedded']['author'][0]['name'])) {
+            $record['authorName'] = $postsData['_embedded']['author'][0]['name'];
+        } else {
+            $record['authorName'] = 'Unknown';
+        }
+
         return [
             'date' => $response[0]['date'],
             'title' => $response[0]['title']['rendered'],
+            'authorName' => $authorName,
             'image' => $featuredMedia,
+            'image_alt' => $featuredMediaAlt,
             'content' => $content,
         ];
     }
@@ -42,6 +52,12 @@ class ContentFormatter
                 'slug' => $postsData['slug'],
                 'title' => $title,
             ];
+
+            if (isset($postsData['_embedded']['author'][0]['name'])) {
+                $record['authorName'] = $postsData['_embedded']['author'][0]['name'];
+            } else {
+                $record['authorName'] = 'Unknown';
+            }
 
             if (isset($postsData['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url'])) {
                 $record['image'] = $postsData['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url'];

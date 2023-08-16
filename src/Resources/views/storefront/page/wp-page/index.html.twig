@@ -3,13 +3,19 @@
     <div class="wp-page">
         {% if page %}
             <div class="row wp-content">
-                <div class="col-md-12 text-center py-3">
+                <div class="col-md-12 py-3">
                     <h1>{{ page.title|raw }}</h1>	
+                    <div class="font-weight-bold">
+                        {% if page.authorName %}
+                            <span>{{ "hatslogicWPIntegration.general.written_by"|trans|sw_sanitize }} {{ page.authorName ?? 'Unknown' }}</span> 
+                        {% endif %}
+                        <span>{{ "hatslogicWPIntegration.general.on"|trans|sw_sanitize }} {{ page.date|date('M d, Y') }}</span>
+                    </div>	
                 </div>
                 <div class="col-md-12 py-3">
-                    {% if page.image %}
+                    {% if config('HatslogicWpIntegration.config.enableWordpressFeaturedImage') && page.image %}
                         <div class="wp-post-featured-image">
-                            <img src="{{ page.image }}" class="img-fluid">
+                            <img src="{{ page.image }}" alt="{{ page.image_alt }}" class="img-fluid">
                         </div>
                     {% endif %}
                     <p>{{ page.content|raw }}</p>

@@ -1,7 +1,7 @@
 {
     "name": "hatslogic-sw/wp-integration",
     "description": "Integrate wordpress posts and pages into shopware",
-    "version": "2.0.0",
+    "version": "1.0.0",
     "type": "shopware-platform-plugin",
     "license": "proprietary",
     "authors": [

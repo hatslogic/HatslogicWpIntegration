@@ -4,6 +4,13 @@
     <card>
         <title>WordPress Integration Configuration</title>
         <title lang="de-DE">WordPress-Integration Konfiguration</title>
+        <input-field type="bool">
+            <name>enableWordpressFeaturedImage</name>
+            <label lang="de-DE">Aktivieren Sie das ausgewählte WordPress-Bild</label>
+            <label>Enable Wordpress Featured Image</label>
+            <value>true</value>
+            <defaultValue>true</defaultValue>
+        </input-field>
 
         <input-field type="text">
             <name>wordpressHomeUrl</name>

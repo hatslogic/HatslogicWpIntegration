@@ -6,17 +6,22 @@
     <div class="wp-post-page">
         {% if blog %}
             <div class="row wp-content">
-                <div class="col-md-12 text-center py-3">
+                <div class="col-md-12 py-3">
                     <h1>{{ blog.title|raw }}</h1>
                     <div class="font-weight-bold">
-                        <span>{{ "hatslogicWPIntegration.general.written_by"|trans|sw_sanitize }} {{ blog.authorName ?? 'Unknown' }}</span> {{ "hatslogicWPIntegration.general.on"|trans|sw_sanitize }} <span>{{ blog.date|date('M d, Y') }}</span>
+                        {% if blog.authorName %}
+                            <span>{{ "hatslogicWPIntegration.general.written_by"|trans|sw_sanitize }} {{ blog.authorName ?? 'Unknown' }}</span>
+                        {% endif %}
+                        <span>{{ "hatslogicWPIntegration.general.on"|trans|sw_sanitize }} {{ blog.date|date('M d, Y') }}</span>
                     </div>	
 
                 </div>
                 <div class="col-md-12 py-3">
-                    <div class="wp-post-featured-image">
-                        <img src="{{ blog.image }}" class="img-fluid">
-                    </div>
+                    {% if config('HatslogicWpIntegration.config.enableWordpressFeaturedImage') %}
+                        <div class="wp-post-featured-image">
+                            <img src="{{ blog.image }}" alt="{{ blog.image_alt }}" class="img-fluid">
+                        </div>
+                    {% endif %}   
                     <p>{{ blog.content|raw }}</p>
                 </div>
             </div>
