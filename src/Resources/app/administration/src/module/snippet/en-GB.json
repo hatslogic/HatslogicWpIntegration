@@ -1,0 +1,31 @@
+{
+    "wp-integration": {
+        "general": {
+            "test_wordpress_api": "Test Wordpress API"
+        },
+        "validation":{
+            "sorry_wordpress_home_url_is_missing": "Sorry, Wordpress home url is missing",
+            "sorry_wordpress_api_path_is_missing": "Sorry, Wordpress api path is missing",
+            "perfect_wordpress_api_url_is_valid": "Perfect, Wordpress api url is valid",
+            "success_but_page_can_not_be_fetch": "Success, But page can not be fetch",
+            "success_but_post_can_not_be_fetch": "Success, But post can not be fetch",
+            "sorry_wordpress_api_url_is_not_valid": "Sorry, Wordpress api url is not valid"
+        },
+        "cms": {
+            "choose_page": "Select Page",
+            "wordpress_page": "Wordpress Page",
+            "page_slug_help_text": "Select the page slug from the available options",
+            "wordpress_post": "Wordpress Post",
+            "page_post_limit": "Page Post Limit",
+            "maximum_number_of_items_displayed_per_page_when_using_pagination": "Maximum number of items displayed per page when using pagination",
+            "post_title_limit": "Post Title Limit",
+            "maximum_number_of_characters_allowed_for_the_post_title": "Maximum number of characters allowed for the post title",
+            "desktop_columns": "Desktop Columns",
+            "number_of_post_columns_to_display_on_larger_screens_like_desktops_restriction": "Number of post columns to display on larger screens like desktops.",
+            "tablet_columns": "Tablet Columns",
+            "number_of_post_columns_to_display_on_tablet_sized_screens_restriction": "Number of post columns to display on tablet-sized screens.",
+            "mobile_columns": "Mobile Columns",
+            "number_of_post_columns_to_display_on_small_screens_like_mobile_phones_restriction": "Number of post columns to display on small screens like mobile phones."
+        }
+    }
+}

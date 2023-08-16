@@ -1,0 +1,31 @@
+{
+    "wp-integration": {
+        "general": {
+            "test_wordpress_api": "Testen Sie die Wordpress-API"
+        },
+        "validation": {
+            "sorry_wordpress_home_url_is_missing": "Leider fehlt die Wordpress-Home-URL",
+            "sorry_wordpress_api_path_is_missing": "Leider fehlt der WordPress-API-Pfad",
+            "perfect_wordpress_api_url_is_valid": "Perfekt, die Wordpress-API-URL ist gültig",
+            "success_but_page_can_not_be_fetch": "Erfolgreich, aber die Seite kann nicht abgerufen werden",
+            "success_but_post_can_not_be_fetch": "Erfolgreich, aber der Beitrag kann nicht abgerufen werden",
+            "sorry_wordpress_api_url_is_not_valid": "Entschuldigung, die Wordpress-API-URL ist ungültig"
+        },
+        "cms": {
+            "choose_page": "Seite auswählen",
+            "wordpress_page": "WordPress-Seite",
+            "page_slug_help_text": "Wählen Sie den Seiten-Slug aus den verfügbaren Optionen aus",
+            "wordpress_post": "Wordpress-Beitrag",
+            "page_post_limit": "Seitenbeitragslimit",
+            "maximum_number_of_items_displayed_per_page_when_using_pagination": "Maximale Anzahl der pro Seite angezeigten Elemente bei Verwendung der Paginierung",
+            "post_title_limit": "Beitragstitelbegrenzung",
+            "maximum_number_of_characters_allowed_for_the_post_title": "Maximal zulässige Zeichenanzahl für den Beitragstitel",
+            "desktop_columns": "Desktop-Säulen",
+            "number_of_post_columns_to_display_on_larger_screens_like_desktops_restriction": "Anzahl der Beitragsspalten, die auf größeren Bildschirmen wie Desktops angezeigt werden sollen.",
+            "tablet_columns": "Tablet-Spalten",
+            "number_of_post_columns_to_display_on_tablet_sized_screens_restriction": "Anzahl der Beitragsspalten, die auf Bildschirmen in Tablet-Größe angezeigt werden sollen.",
+            "mobile_columns": "Mobile Säulen",
+            "number_of_post_columns_to_display_on_small_screens_like_mobile_phones_restriction": "Anzahl der Beitragsspalten, die auf kleinen Bildschirmen wie Mobiltelefonen angezeigt werden sollen."
+        }
+    }
+}

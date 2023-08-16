@@ -1,0 +1,13 @@
+{% block sw_cms_element_hats_wp_page_config %}
+    <sw-select-field 
+        v-model="PageSlug"
+        :label="$t('wp-integration.cms.choose_page')"
+        :helpText="$t('wp-integration.cms.page_slug_help_text')"
+        required>
+        <option v-for="page in pages"
+                :value="page.slug"
+                :selected="page.slug === PageSlug">
+            {{ page.slug }}
+        </option>
+    </sw-select-field>
+{% endblock %}

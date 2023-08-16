@@ -1,0 +1,47 @@
+{% block sw_cms_element_hats_wp_post_config %}
+<div>
+    <sw-number-field
+        v-model="PagePostLimit"
+        :label="$t('wp-integration.cms.page_post_limit')"
+        @input="onElementUpdate"
+        @change="onElementUpdate"
+        min="1"
+        :helpText="$t('wp-integration.cms.maximum_number_of_items_displayed_per_page_when_using_pagination')"
+    ></sw-number-field>
+    <sw-number-field
+        v-model="PageTitleLimit"
+        @input="onElementUpdate"
+        @change="onElementUpdate"
+        :label="$t('wp-integration.cms.post_title_limit')"
+        min="1"
+        :helpText="$t('wp-integration.cms.maximum_number_of_characters_allowed_for_the_post_title')"
+    ></sw-number-field>
+    <sw-number-field
+        v-model="DesktopColumnCount"
+        @input="onElementUpdate"
+        @change="onElementUpdate"
+        :label="$t('wp-integration.cms.desktop_columns')"
+        min="1"
+        max="4"
+        :helpText="$t('wp-integration.cms.number_of_post_columns_to_display_on_larger_screens_like_desktops_restriction')"
+    ></sw-number-field>
+    <sw-number-field
+        v-model="TabletColumnCount"
+        @input="onElementUpdate"
+        @change="onElementUpdate"
+        :label="$t('wp-integration.cms.tablet_columns')"
+        min="1"
+        max="3"
+        :helpText="$t('wp-integration.cms.number_of_post_columns_to_display_on_tablet_sized_screens_restriction')"
+    ></sw-number-field>
+    <sw-number-field
+        v-model="MobileColumnCount"
+        @input="onElementUpdate"
+        @change="onElementUpdate"
+        :label="$t('wp-integration.cms.mobile_columns')"
+        min="1"
+        max="2"
+        :helpText="$t('wp-integration.cms.number_of_post_columns_to_display_on_small_screens_like_mobile_phones_restriction')"
+    ></sw-number-field>
+</div>
+{% endblock %}

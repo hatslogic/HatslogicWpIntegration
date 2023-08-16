@@ -1,0 +1,39 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+{% block base_head %}
+    {% sw_include '@Storefront/storefront/page/wp-post/custom-meta.html.twig' %}
+{% endblock %}
+{% block base_content %}
+    <div class="wp-post-page">
+        {% if blog %}
+            <div class="row wp-content">
+                <div class="col-md-12 py-3">
+                    <h1>{{ blog.title|raw }}</h1>
+                    <div class="font-weight-bold">
+                        {% if blog.authorName %}
+                            <span>{{ "hatslogicWPIntegration.general.written_by"|trans|sw_sanitize }} {{ blog.authorName ?? 'Unknown' }}</span>
+                        {% endif %}
+                        <span>{{ "hatslogicWPIntegration.general.on"|trans|sw_sanitize }} {{ blog.date|date('M d, Y') }}</span>
+                    </div>	
+
+                </div>
+                <div class="col-md-12 py-3">
+                    {% if config('HatslogicWpIntegration.config.enableWordpressFeaturedImage') %}
+                        <div class="wp-post-featured-image">
+                            <img src="{{ blog.image }}" alt="{{ blog.image_alt }}" class="img-fluid">
+                        </div>
+                    {% endif %}   
+                    <p>{{ blog.content|raw }}</p>
+                </div>
+            </div>
+        {% else %}
+            <div class="row">
+                <div class="col-md-12 d-flex align-items-center justify-content-center py-5">
+                    <div class="text-center">
+                        <img src="{{ asset('/bundles/hatslogicwpintegration/static/cms/no_result_found.png') }}" class="img-fluid">
+                        <h4><strong>{{ "hatslogicWPIntegration.general.404_found"|trans|sw_sanitize }}</strong></h4>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="HatslogicWpIntegration\DataResolver\WpPostCmsElementResolver">
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
+            <argument type="service" id="HatslogicWpIntegration\Service\CurlService" />
+            <argument type="service" id="HatslogicWpIntegration\Service\ContentFormatter" />
+            <tag name="shopware.cms.data_resolver" />
+        </service>
+        <service id="HatslogicWpIntegration\DataResolver\WpPageCmsElementResolver">
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
+            <argument type="service" id="HatslogicWpIntegration\Service\CurlService" />
+            <argument type="service" id="HatslogicWpIntegration\Service\ContentFormatter" />
+            <tag name="shopware.cms.data_resolver" />
+        </service>
+        <service id="HatslogicWpIntegration\Service\CurlService" />
+        <service id="HatslogicWpIntegration\Service\ContentFormatter" />
+        <service id="HatslogicWpIntegration\Storefront\Controller\BlogController" public="true">
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
+            <argument type="service" id="Shopware\Storefront\Page\GenericPageLoader" />
+            <argument type="service" id="router" />
+            <argument type="service" id="HatslogicWpIntegration\Service\CurlService" />
+            <argument type="service" id="HatslogicWpIntegration\Service\ContentFormatter" />
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+            <call method="setTwig">
+                <argument type="service" id="twig"/>
+            </call>
+        </service>
+    </services>
+</container>

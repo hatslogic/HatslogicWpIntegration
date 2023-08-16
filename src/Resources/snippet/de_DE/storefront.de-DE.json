@@ -1,0 +1,11 @@
+{
+    "hatslogicWPIntegration": {
+        "general":{
+            "by" : "Von",
+            "on" : "An",
+            "written_by" : "Geschrieben von",
+            "no_result_found" : "Hoppla! Keine Ergebnisse gefunden.",
+            "404_found" : "Hoppla! Anscheinend ist bei Ihnen ein 404-Fehler aufgetreten. Das bedeutet, dass der Link, auf den Sie geklickt haben, fehlerhaft ist oder die von Ihnen eingegebene URL falsch ist."
+        }
+    }
+}

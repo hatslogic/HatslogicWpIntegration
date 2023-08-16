@@ -1,0 +1,44 @@
+{
+    "name": "hatslogic-sw/wp-integration",
+    "description": "Integrate wordpress posts and pages into shopware",
+    "version": "1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "proprietary",
+    "authors": [
+      {
+        "name": "2Hats Logic Solutions",
+        "homepage": "https://www.2hatslogic.com"
+      }
+    ],
+    "require": {
+      "shopware/core": ">=6.5",
+      "shopware/administration": ">=6.5",
+      "shopware/storefront": ">=6.5"
+    },
+    "autoload": {
+      "psr-4": {
+        "HatslogicWpIntegration\\": "src/"
+      }
+    },
+    "extra": {
+      "shopware-plugin-class": "HatslogicWpIntegration\\HatslogicWpIntegration",
+      "plugin-icon": "src/Resources/config/plugin.png",
+      "label": {
+        "de-DE": "Wordpress-Integration",
+        "en-GB": "Wordpress Integration"
+      },
+      "description": {
+        "de-DE": "Integrieren Sie WordPress-Beiträge und -Seiten in Shopware",
+        "en-GB": "Integrate wordpress posts and pages into shopware"
+      },
+      "manufacturerLink": {
+        "de-DE": "https://store.shopware.com/2hats-logic-solutions-private-limited.html",
+        "en-GB": "https://store.shopware.com/en/2hats-logic-solutions-private-limited.html"
+      },
+      "supportLink": {
+        "de-DE": "https://store.shopware.com/shopware.php?sViewport=forms&sFid=22",
+        "en-GB": "https://store.shopware.com/en/shopware.php?sViewport=forms&sFid=23"
+      }
+    }
+  }
+  
