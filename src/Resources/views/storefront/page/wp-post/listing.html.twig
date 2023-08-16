@@ -65,7 +65,7 @@
                     {% else %}
                         <div class="no-items-found-wrap text-center">
                             <img src="{{ asset('/bundles/hatslogicwpintegration/static/cms/no_result_found.png') }}" class="img-fluid">
-                            <span class="wp-h1 py-4">{{ "hatslogicWPIntegration.general.no_result_found"|trans|sw_sanitize }}</span>
+                            <div class="wp-h1 py-4">{{ "hatslogicWPIntegration.general.no_result_found"|trans|sw_sanitize }}</div>
                         </div>
                     {% endif %}
                 {% endblock %}
