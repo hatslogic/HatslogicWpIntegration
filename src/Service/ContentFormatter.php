@@ -27,7 +27,7 @@ class ContentFormatter
         if (isset($postsData['_embedded']['author'][0]['name'])) {
             $record['authorName'] = $postsData['_embedded']['author'][0]['name'];
         } else {
-            $record['authorName'] = 'Unknown';
+            $record['authorName'] = '';
         }
 
         return [
@@ -61,7 +61,7 @@ class ContentFormatter
             if (isset($postsData['_embedded']['author'][0]['name'])) {
                 $record['authorName'] = $postsData['_embedded']['author'][0]['name'];
             } else {
-                $record['authorName'] = 'Unknown';
+                $record['authorName'] = '';
             }
 
             if (isset($postsData['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url'])) {
